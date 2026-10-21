@@ -7,6 +7,7 @@ import { Loader2 } from "lucide-react";
 import { products } from "@data/products";
 import { useLanguage } from "@/i18n/language-provider";
 import { ORDER_QUANTITY_KEYS, inquirySchema } from "@/lib/inquiry-schema";
+import { getProductCopy } from "@/lib/product-copy";
 
 /** Form state before / during validation (empty select = "") */
 type InquiryFormInput = {
@@ -17,7 +18,6 @@ type InquiryFormInput = {
   orderQuantity: string;
   message?: string;
 };
-import { getProductCopy } from "@/lib/product-copy";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";

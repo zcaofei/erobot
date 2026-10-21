@@ -29,3 +29,8 @@ export const inquirySchema = z.object({
 });
 
 export type InquiryFormValues = z.infer<typeof inquirySchema>;
+
+/** Validates API + client submit payload after form validation */
+export function parseInquiryPayload(data: unknown) {
+  return inquirySchema.safeParse(data);
+}
