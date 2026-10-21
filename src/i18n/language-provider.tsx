@@ -56,7 +56,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     document.documentElement.dir = dir;
   }, [locale, dir, mounted]);
 
-  const value = useMemo(
+  const value = useMemo<LanguageContextValue>(
     () => ({ locale, setLocale, t, dir }),
     [locale, setLocale, t, dir],
   );
