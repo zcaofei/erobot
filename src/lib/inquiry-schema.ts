@@ -21,7 +21,9 @@ export const inquirySchema = z.object({
   orderQuantity: z
     .string()
     .min(1, "Please select an estimated order quantity")
-    .pipe(z.enum(ORDER_QUANTITY_KEYS)),
+    .refine((val) => (ORDER_QUANTITY_KEYS as readonly string[]).includes(val), {
+      message: "Please select an estimated order quantity",
+    }),
   message: z.string().optional(),
   locale: z.string().optional(),
 });

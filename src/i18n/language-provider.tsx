@@ -48,7 +48,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const t = useMemo(() => getDictionary(locale), [locale]);
-  const dir = isRtlLocale(locale) ? "rtl" : "ltr";
+  const dir: "ltr" | "rtl" = isRtlLocale(locale) ? "rtl" : "ltr";
 
   useEffect(() => {
     if (!mounted) return;
