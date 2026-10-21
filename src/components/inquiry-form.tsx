@@ -6,7 +6,17 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
 import { products } from "@data/products";
 import { useLanguage } from "@/i18n/language-provider";
-import { ORDER_QUANTITY_KEYS, inquirySchema, type InquiryFormValues } from "@/lib/inquiry-schema";
+import { ORDER_QUANTITY_KEYS, inquirySchema } from "@/lib/inquiry-schema";
+
+/** Form state before / during validation (empty select = "") */
+type InquiryFormInput = {
+  fullName: string;
+  email: string;
+  company: string;
+  productSlug?: string;
+  orderQuantity: string;
+  message?: string;
+};
 import { getProductCopy } from "@/lib/product-copy";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -55,7 +65,7 @@ export function InquiryForm({
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<InquiryFormValues>({
+  } = useForm<InquiryFormInput>({
     resolver: zodResolver(inquirySchema),
     defaultValues: {
       productSlug: defaultProductSlug ?? "",
@@ -64,7 +74,7 @@ export function InquiryForm({
     },
   });
 
-  async function onSubmit(values: InquiryFormValues) {
+  async function onSubmit(values: InquiryFormInput) {
     setSubmitting(true);
     try {
       const res = await fetch("/api/inquiry", {
