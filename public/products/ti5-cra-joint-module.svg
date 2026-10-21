@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-label="Product placeholder">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b"/>
+      <stop offset="100%" style="stop-color:#1e3a8a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#g)"/>
+  <rect x="280" y="140" width="240" height="220" rx="24" fill="#334155" stroke="#60a5fa" stroke-width="3"/>
+  <circle cx="400" cy="250" r="48" fill="#0f172a" stroke="#93c5fd" stroke-width="2"/>
+  <text x="400" y="420" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="22" font-weight="600">Ti5 CRA Joint Module</text>
+  <text x="400" y="450" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="14">Image placeholder</text>
+</svg>
